@@ -1,0 +1,21 @@
+---
+- name: Configure all VMs
+  hosts: all
+  become: true
+
+  roles:
+    - common
+
+- name: Configure web server
+  hosts: web
+  become: true
+
+  roles:
+    - web
+
+- name: Configure proxy server
+  hosts: proxy
+  become: true
+
+  roles:
+    - proxy
